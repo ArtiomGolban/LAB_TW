@@ -365,6 +365,7 @@
     <Content Include="Vendor\scss\_site-navbar.scss" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
