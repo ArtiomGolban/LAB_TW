@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Login page";
+}
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2>Login page</h2>
+@Html.ValidationMessage("UserLogin")
+
+<form action="@Url.Action("Login", "Login")" method="post">
+    <input type="text" name="Credentials" value="user" />
+    <input type="password" name="Password" value="1234" />
+
+    <button type="submit">Login NOW</button>
+</form>
+
