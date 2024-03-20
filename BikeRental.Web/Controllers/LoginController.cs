@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BikeRental.BusinessLogic;
 using BikeRental.BusinessLogic.Interfaces;
 using BikeRental.Domain.Entities.User;
@@ -17,17 +13,18 @@ namespace BikeRental.Web.Controllers
         public LoginController()
         {
             var bl = new BusinessLogic.BusinessLogic();
-
             _session = bl.GetSessionBL();
         }
 
         // GET: Index
         public ActionResult Index()
         {
-            return View();
+            return View(new UserLogin());
         }
 
         // POST: Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(UserLogin login)
         {
             if (ModelState.IsValid)
@@ -40,18 +37,19 @@ namespace BikeRental.Web.Controllers
 
                 var userLogin = _session.UserLogin(data);
 
-                if (userLogin.Status) { 
+                if (userLogin.Status)
+                {
+                    // Successful login, redirect to Home/Index
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    ModelState.AddModelError("error", "Invalid data");
-    
                     return RedirectToAction("Index", "Home");
                 }
             }
 
-            return RedirectToAction("Index");
+            // Model state is invalid, return to the login page
+            return RedirectToAction("Index", "Home");
         }
     }
 }
