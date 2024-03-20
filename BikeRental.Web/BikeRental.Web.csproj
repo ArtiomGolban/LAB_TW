@@ -204,6 +204,7 @@
     <Content Include="Vendor\js\jquery.stellar.min.js" />
     <Content Include="Vendor\js\jquery.sticky.js" />
     <Content Include="Vendor\js\jquery.waypoints.min.js" />
+    <Content Include="Vendor\js\login.js" />
     <Content Include="Vendor\js\main.js" />
     <Content Include="Vendor\js\mediaelement-and-player.min.js" />
     <Content Include="Vendor\js\owl.carousel.min.js" />
