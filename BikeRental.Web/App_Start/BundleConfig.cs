@@ -34,6 +34,7 @@ namespace BikeRental.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap-datepicker.min.js").Include("~/Vendor/js/bootstrap-datepicker.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/aos.js").Include("~/Vendor/js/aos.js"));
             bundles.Add(new ScriptBundle("~/bundles/main.js").Include("~/Vendor/js/main.js"));
+            bundles.Add(new ScriptBundle("~/bundles/login.js").Include("~/Vendor/js/login.js"));
 
         }
     }
