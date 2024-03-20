@@ -20,6 +20,7 @@ namespace BikeRental.Web
             bundles.Add(new StyleBundle("~/bundles/flaticon.css").Include("~/Vendor/fonts/flaticon/font/flaticon.css"));
             bundles.Add(new StyleBundle("~/bundles/aos.css").Include("~/Vendor/css/aos.css"));
             bundles.Add(new StyleBundle("~/bundles/style.css").Include("~/Vendor/css/style.css"));
+            bundles.Add(new StyleBundle("~/bundles/fonts/icomoon/style.css").Include("~/Vendor/fonts/icomoon/style.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery-3.3.1.min.js").Include("~/Vendor/js/jquery-3.3.1.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/popper.min.js").Include("~/Vendor/js/popper.min.js"));

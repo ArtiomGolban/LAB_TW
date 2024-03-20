@@ -369,6 +369,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\_LayoutAuth.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Home\Listing.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

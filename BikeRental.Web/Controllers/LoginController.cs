@@ -1,4 +1,7 @@
+
 ﻿using BikeRental.BusinessLogic.Interfaces;
+﻿using System.Web.Mvc;
+
 using BikeRental.BusinessLogic;
 using BikeRental.Domain.Entities.User;
 using BikeRental.Web.Models;
@@ -14,6 +17,7 @@ public class LoginController : Controller
         _session = bl.GetSessionBL();
     }
 
+
     // GET: Index
     public ActionResult Index()
     {
@@ -25,6 +29,13 @@ public class LoginController : Controller
     {
         return View();
     }
+
+    public LoginController()
+        {
+            var bl = new BusinessLogic.BusinessLogic();
+            _session = bl.GetSessionBL();
+        }
+
 
     // POST: Register
     [HttpPost]
@@ -63,9 +74,19 @@ public class LoginController : Controller
     public ActionResult Login(UserLogin login)
     {
         if (ModelState.IsValid)
+
+            return View(new UserLogin());
+        }
+
+        // POST: Login
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(UserLogin login)
+
         {
             ULoginData data = new ULoginData
             {
+
                 Username = login.Username,
                 Password = login.Password
             };
@@ -82,6 +103,29 @@ public class LoginController : Controller
                 ModelState.AddModelError("error", "Invalid credentials");
                 return View();
             }
+
+                ULoginData data = new ULoginData
+                {
+                    Credentials = login.Credentials,
+                    Password = login.Password
+                };
+
+                var userLogin = _session.UserLogin(data);
+
+                if (userLogin.Status)
+                {
+                    // Successful login, redirect to Home/Index
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            // Model state is invalid, return to the login page
+            return RedirectToAction("Index", "Home");
+
         }
 
         // Redirect to home page if model state is not valid (e.g., missing fields)
