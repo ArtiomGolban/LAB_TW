@@ -81,12 +81,11 @@ namespace BikeRental.Web.Controllers
                 else
                 {
                     ModelState.AddModelError("error", "Invalid credentials");
-                    return View(login);
+                    return RedirectToAction("Index3", "Home");
                 }
             }
 
-            // Model state is invalid, return to the login page
-            return View(login);
+            return View();
         }
     }
 }
