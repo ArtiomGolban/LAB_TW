@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,10 +56,19 @@
     <Compile Include="Core\AdminApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="DataBase\BikeContext.cs" />
+    <Compile Include="DataBase\SessionContext.cs" />
     <Compile Include="Interfaces\ISession.cs" />
-    <Compile Include="Migrations\202403271321547_InitialModel.cs" />
-    <Compile Include="Migrations\202403271321547_InitialModel.Designer.cs">
-      <DependentUpon>202403271321547_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202403271321547_CreateUserDBTable.cs" />
+    <Compile Include="Migrations\202403271321547_CreateUserDBTable.Designer.cs">
+      <DependentUpon>202403271321547_CreateUserDBTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404212030572_AddLeveColumnToUser.cs" />
+    <Compile Include="Migrations\202404212030572_AddLeveColumnToUser.Designer.cs">
+      <DependentUpon>202404212030572_AddLeveColumnToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404212043271_CreateSessionDBTable.cs" />
+    <Compile Include="Migrations\202404212043271_CreateSessionDBTable.Designer.cs">
+      <DependentUpon>202404212043271_CreateSessionDBTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +89,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202403271321547_InitialModel.resx">
-      <DependentUpon>202403271321547_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202403271321547_CreateUserDBTable.resx">
+      <DependentUpon>202403271321547_CreateUserDBTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404212030572_AddLeveColumnToUser.resx">
+      <DependentUpon>202404212030572_AddLeveColumnToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404212043271_CreateSessionDBTable.resx">
+      <DependentUpon>202404212043271_CreateSessionDBTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

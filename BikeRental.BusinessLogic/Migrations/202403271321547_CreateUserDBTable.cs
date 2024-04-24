@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialModel : DbMigration
+    public partial class CreateUserDBTable : DbMigration
     {
         public override void Up()
         {
@@ -17,7 +17,6 @@
                         Email = c.String(nullable: false, maxLength: 40),
                     })
                 .PrimaryKey(t => t.Id);
-            
         }
         
         public override void Down()
