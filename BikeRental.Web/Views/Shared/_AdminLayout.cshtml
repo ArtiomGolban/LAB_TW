@@ -1,14 +1,10 @@
-﻿@{
-    ViewBag.Title = "_LayoutAuth";
-}
-
-@using System.Web.Optimization;
+﻿@using System.Web.Optimization;
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Admin</title>
 
     <link rel="stylesheet" href="/fonts/icomoon/style.css">
 
@@ -27,14 +23,13 @@
 <body>
 
 <header class="site-navbar site-navbar-target" role="banner">
-    @Html.Partial("_Header")
+    @Html.Partial("_AdminHeader")
 </header>
-<br>
-@RenderBody()
 
-<footer class="site-footer">
-    @Html.Partial("_Footer")
-</footer>
+<div style="padding-top: 100px">
+    @RenderBody()
+</div>
+
 
 
 

@@ -16,10 +16,10 @@
                     <li><a href="@Url.Action("Listing","Home")" class="nav-link">Listing</a></li>
                     <li><a href="@Url.Action("About","Home")" class="nav-link">About</a></li>
                     <li><a href="@Url.Action("Contact","Home")" class="nav-link">Contact</a></li>
-                    <li><a href="@Url.Action("Index","Account")" class="nav-link">Account</a></li>
-                    <li><a href="@Url.Action("Index","Admin")" class="nav-link">Admin</a></li>
                     @if (System.Web.HttpContext.Current.Session["LoginStatus"] == "login")
                     {
+                        <li><a href="@Url.Action("Index","Account")" class="nav-link">Account</a></li>
+                        <li><a href="@Url.Action("Index","Admin")" class="nav-link">Admin</a></li>
                         <li><a href="@Url.Action("Logout", "Login")" class="nav-link p-2 btn btn-danger text-light">Logout</a></li>
                     }
                     else

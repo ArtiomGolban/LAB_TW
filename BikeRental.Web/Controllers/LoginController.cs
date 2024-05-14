@@ -26,7 +26,7 @@ namespace BikeRental.Web.Controllers
         // POST: Login
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(UserLogin login)
+        public ActionResult Index(UserEdit login)
         {
             if (ModelState.IsValid)
             {
