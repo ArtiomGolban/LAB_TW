@@ -37,6 +37,18 @@ namespace BikeRental.Web.Controllers
 
         public ActionResult UsersList()
         {
+            SessionStatus();
+
+            if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if (System.Web.HttpContext.Current.GetMySessionObject().Level != UserRole.Admin)
+            {
+                return new HttpStatusCodeResult(403, "Forbidden");
+            }
+
             var users = _userService.GetAllUsers();
 
             return View(users);
@@ -45,6 +57,18 @@ namespace BikeRental.Web.Controllers
 
         public ActionResult UserEdit(int id)
         {
+            SessionStatus();
+
+            if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if (System.Web.HttpContext.Current.GetMySessionObject().Level != UserRole.Admin)
+            {
+                return new HttpStatusCodeResult(403, "Forbidden");
+            }
+
             var user = _userService.GetById(id);
 
             return View(user);
@@ -54,6 +78,18 @@ namespace BikeRental.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult UserEdit(int id, UserEdit userEdit)
         {
+            SessionStatus();
+
+            if ((string)System.Web.HttpContext.Current.Session["LoginStatus"] != "login")
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            if (System.Web.HttpContext.Current.GetMySessionObject().Level != UserRole.Admin)
+            {
+                return new HttpStatusCodeResult(403, "Forbidden");
+            }
+
             var user = _userService.UpdateUser(id, userEdit);
 
             return View(user);
