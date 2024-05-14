@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using BikeRental.Domain.Enums;
 
 namespace BikeRental.Web.Models.Admin
 {
@@ -11,5 +12,7 @@ namespace BikeRental.Web.Models.Admin
 
         [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
+
+        public UserRole Level { get; set; }
     }
 }

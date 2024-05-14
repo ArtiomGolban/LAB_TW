@@ -17,5 +17,5 @@ namespace BikeRental.Domain.Entities.User
 
     [Required(ErrorMessage = "Password is required")]
     public string Password { get; set; }
-}
+    }
 }

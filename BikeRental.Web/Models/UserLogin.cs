@@ -2,7 +2,7 @@
 
 namespace BikeRental.Web.Models
 {
-    public class UserEdit
+    public class UserLogin
     {
         [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }

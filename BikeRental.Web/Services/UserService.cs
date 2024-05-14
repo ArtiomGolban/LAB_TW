@@ -43,5 +43,15 @@ namespace BikeRental.Web.Services
 
             return user;
        }
+
+       public void DeleteUser(int userId)
+       {
+           var user = _dbContext.Users.FirstOrDefault(u => u.Id == userId);
+           if (user != null)
+           {
+               _dbContext.Users.Remove(user);
+               _dbContext.SaveChanges();
+           }
+       }
     }
 }
